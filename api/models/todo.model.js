@@ -54,7 +54,8 @@ async function changeTodo(userId, id, data) {
   return todos;
 }
 async function createTodo(userId, data) {
-  let todos = getTodos(userExists);
+  let todos = await getTodos(userId);
+
   if (!Array.isArray(todos)) {
     todos = [];
   }
